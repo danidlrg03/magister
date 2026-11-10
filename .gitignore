@@ -8,8 +8,6 @@ coverage/
 # Local configuration and credentials
 .env
 .env.*
-!.env.example
-!.env.server.example
 *.pem
 *.key
 *service-account*.json

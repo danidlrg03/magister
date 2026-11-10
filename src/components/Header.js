@@ -1,66 +1,61 @@
-// Header.js
-import React, { useEffect, useRef } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { signOut } from 'firebase/auth';
-import { auth } from '../firebase';
-import '../styles/Header.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faSignOutAlt } from '@fortawesome/free-solid-svg-icons';
+import React, { useState } from "react";
+import { Link, NavLink } from "react-router-dom";
+import { signOut } from "firebase/auth";
+import { FiBookOpen, FiLogOut, FiPlus } from "react-icons/fi";
+import { auth } from "../firebase";
+import "../styles/Header.css";
 
-const Header = () => {
-  const navigate = useNavigate();
-  const dropdownRef = useRef(null);
-
-  useEffect(() => {
-    const handleClickOutside = (event) => {
-      if (dropdownRef.current && !dropdownRef.current.contains(event.target)) {
-        // Click occurred outside of the dropdown, so close it
-      }
-    };
-
-    // Add event listener to detect clicks anywhere on the page
-    document.addEventListener('mousedown', handleClickOutside);
-
-    return () => {
-      // Cleanup: Remove event listener when component unmounts
-      document.removeEventListener('mousedown', handleClickOutside);
-    };
-  }, []);
-
-  const handleLogout = () => {
-    signOut(auth)
-      .then(() => {
-        // Sign-out successful.
-        navigate('/login');
-        console.log('Signed out successfully');
-      })
-      .catch((error) => {
-        // An error happened.
-        console.error('Error signing out: ', error);
-      });
+export default function Header() {
+  const [error, setError] = useState("");
+  const [busy, setBusy] = useState(false);
+  const logout = async () => {
+    setBusy(true);
+    try {
+      await signOut(auth);
+    } catch {
+      setError("No se pudo cerrar la sesión. Inténtalo de nuevo.");
+      setBusy(false);
+    }
   };
-
   return (
-    <header className="header">
-      <nav>
-        <ul>
-          <li><Link to="/" aria-label="Inicio"><h1>Magister</h1></Link></li>
-          <li><Link to="/" aria-label="Inicio">Inicio</Link></li>
-          <li><Link to="/search-courses" aria-label="Buscar cursos">Buscar cursos</Link></li>
-          <li className="logout">
+    <>
+      <a href="#main-content" className="skip-link">
+        Saltar al contenido
+      </a>
+      <header className="header">
+        <div className="header-inner">
+          <Link to="/" className="brand" aria-label="Magister, inicio">
+            <FiBookOpen aria-hidden="true" />
+            magister<span className="brand-dot">.</span>
+          </Link>
+          <nav className="main-nav" aria-label="Navegación principal">
+            <NavLink to="/" end>
+              Mis cursos
+            </NavLink>
+            <NavLink to="/search-courses">Explorar</NavLink>
+          </nav>
+          <div className="header-actions">
+            <NavLink to="/new-course" className="button header-create">
+              <FiPlus aria-hidden="true" />
+              Crear curso
+            </NavLink>
             <button
-              role='button' 
-              aria-label="Cerrar Sesión"
-              onClick={handleLogout}
+              className="icon-button"
+              aria-label="Cerrar sesión"
+              title="Cerrar sesión"
+              onClick={logout}
+              disabled={busy}
             >
-              <FontAwesomeIcon icon={faSignOutAlt} />
-              <span>Cerrar Sesión</span>
+              <FiLogOut aria-hidden="true" />
             </button>
-          </li>
-        </ul>
-      </nav>
-    </header>
+          </div>
+        </div>
+      </header>
+      {error && (
+        <p className="notice error page" role="alert">
+          {error}
+        </p>
+      )}
+    </>
   );
-};
-
-export default Header;
+}

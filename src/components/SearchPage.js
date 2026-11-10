@@ -1,78 +1,87 @@
-// SearchPage.js
-import React, { useState, useEffect } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
-import { onAuthStateChanged } from 'firebase/auth';
-import { auth } from '../firebase';
-import { useCourseContext } from '../CourseContext';
-import '../styles/SearchPage.css';
+import React, { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
+import { Helmet } from "react-helmet";
+import { FiSearch } from "react-icons/fi";
+import { useCourseContext } from "../CourseContext";
+import { CourseCard } from "./CourseList";
+import "../styles/SearchPage.css";
 
-const SearchPage = () => {
-  const navigate = useNavigate();
-  const [publicCourses, setPublicCourses] = useState([]); // [1]
-  const [searchQuery, setSearchQuery] = useState('');
-  const [searchResults, setSearchResults] = useState([]);
-  const { allCourses, fetchAllCourses } = useCourseContext();
-
-  useEffect(() =>  {
-
-    async function fetchData(){
-      if (allCourses.length === 0) {
-        await fetchAllCourses();
-      }
-      setPublicCourses(allCourses.filter(course => course.courseJSON.isPublic));
-    } 
-
-    onAuthStateChanged(auth, (user) => {
-      if (!user) {
-        navigate('/login');
-      }
-    });
-
-    fetchData()
-
-  }, [navigate, allCourses, fetchAllCourses]);
-
-
-  const handleSearchInputChange = (event) => {
-    setSearchQuery(event.target.value);
-  };
-
-  const handleSearchSubmit = (event) => {
-    event.preventDefault();
-    const results = publicCourses.filter(course =>
-      course.courseJSON.title.toLowerCase().includes(searchQuery.toLowerCase())
-    );
-    setSearchResults(results);
-  };
-
-  return (
-    <div className="search-container">
-      <h1 tabIndex={0}>Buscar Cursos</h1>
-      <form className="search-form" onSubmit={handleSearchSubmit}>
-        <label htmlFor="search-input" className="visually-hidden">Buscar cursos</label>
-        <input
-          role="searchbox"
-          id="search-input"
-          type="text"
-          value={searchQuery}
-          onChange={handleSearchInputChange}
-          placeholder="Introduzca el término de búsqueda"
-          aria-label="Introduzca el término de búsqueda"
-          tabIndex={0}
-        />
-        <button role='button' type="submit" tabIndex={0}>Buscar</button>
-      </form>
-      <div className="search-results" aria-live="polite">
-        {searchResults.map((course, index) => (
-          <div className="course" key={index}>
-            <h2 tabIndex={0}>{course.courseJSON.title}</h2>
-            <p tabIndex={0}>{course.courseJSON.description}</p>
-            <Link to={`/courses/${course.courseID}`} className="course-link" tabIndex={0}>Ver Curso</Link>
-          </div>
-        ))}
-      </div>
-    </div>
+export default function SearchPage() {
+  const { allCourses, catalogStatus, fetchAllCourses } = useCourseContext();
+  const [search, setSearch] = useState("");
+  useEffect(() => {
+    if (catalogStatus === "idle") fetchAllCourses();
+  }, [catalogStatus, fetchAllCourses]);
+  const results = allCourses.filter(
+    (course) =>
+      course.courseJSON.isPublic &&
+      (course.courseJSON.title + " " + course.courseJSON.description)
+        .toLocaleLowerCase("es")
+        .includes(search.trim().toLocaleLowerCase("es")),
   );
-};
-
-export default SearchPage;
+  return (
+    <main id="main-content" className="page explore-page" tabIndex={-1}>
+      <Helmet>
+        <title>Explorar cursos · Magister</title>
+      </Helmet>
+      <div className="page-heading">
+        <div>
+          <h1>Explorar cursos</h1>
+          <p>Explora las rutas que otros estudiantes han compartido.</p>
+        </div>
+      </div>
+      <label className="search-field explore-search">
+        <FiSearch aria-hidden="true" />
+        <span className="visually-hidden">Buscar cursos públicos</span>
+        <input
+          type="search"
+          placeholder="Busca un tema, una habilidad, una idea…"
+          value={search}
+          onChange={(event) => setSearch(event.target.value)}
+        />
+      </label>
+      {catalogStatus === "error" ? (
+        <div className="notice error" role="alert">
+          <p>No se pudieron cargar los cursos públicos.</p>
+          <button className="button secondary" onClick={fetchAllCourses}>
+            Volver a intentar
+          </button>
+        </div>
+      ) : catalogStatus !== "ready" ? (
+        <p className="loading-state" role="status">
+          Cargando cursos públicos…
+        </p>
+      ) : (
+        <>
+          <p className="results-count" role="status">
+            {results.length}{" "}
+            {results.length === 1 ? "curso disponible" : "cursos disponibles"}
+          </p>
+          {results.length ? (
+            <div className="course-grid">
+              {results.map((course) => (
+                <CourseCard key={course.courseID} course={course} />
+              ))}
+            </div>
+          ) : (
+            <section className="empty-state">
+              <FiSearch size={30} aria-hidden="true" />
+              <h2>
+                {search
+                  ? "Todavía no hay una ruta para esa búsqueda"
+                  : "Aún no hay cursos públicos"}
+              </h2>
+              <p>Puedes crear un curso adaptado a lo que quieres aprender.</p>
+              <Link
+                className="button"
+                to={"/new-course?topic=" + encodeURIComponent(search)}
+              >
+                Crear un curso sobre este tema
+              </Link>
+            </section>
+          )}
+        </>
+      )}
+    </main>
+  );
+}

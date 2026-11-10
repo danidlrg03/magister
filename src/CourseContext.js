@@ -1,164 +1,200 @@
-// CourseContext.js
-import React, { createContext, useState, useContext, useEffect} from 'react';
-import { collection, getDocs, where, query, updateDoc, doc } from "firebase/firestore";
-import {db, auth} from './firebase';
-import { set } from 'firebase/database';
+import React, {
+  createContext,
+  useCallback,
+  useContext,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
+import {
+  collection,
+  getDocs,
+  where,
+  query,
+  updateDoc,
+  doc,
+} from "firebase/firestore";
+import { db, auth } from "./firebase";
 
-// Create the context
 const CourseContext = createContext();
+const decode = (snapshot) =>
+  snapshot.docs.map((item) => ({
+    ...item.data(),
+    courseJSON: JSON.parse(item.data().courseString),
+    courseID: item.id,
+  }));
 
-// Create a provider component
 export const CourseProvider = ({ children }) => {
-
   const [enrolledCourses, setEnrolledCourses] = useState([]);
   const [createdCourses, setCreatedCourses] = useState([]);
   const [allCourses, setAllCourses] = useState([]);
   const [user, setUser] = useState(null);
+  const [authReady, setAuthReady] = useState(false);
+  const [coursesLoading, setCoursesLoading] = useState(true);
+  const [coursesError, setCoursesError] = useState("");
+  const [catalogStatus, setCatalogStatus] = useState("idle");
+  const session = useRef(0);
+  const catalogRequest = useRef(null);
 
-  useEffect(() => {
-    const unsubscribe = auth.onAuthStateChanged(async (user) => {
-      if (user) {
-        setUser(user); // Update user state
-        await fetchEnrolledCourses(user.uid); // Pass user ID directly
-        await fetchCreatedCourses(user.uid);
-      } else {
-        setUser(null);
-        setEnrolledCourses([]);
-        setCreatedCourses([]);
-      }
-    });
-    return () => unsubscribe();
+  const refreshCourses = useCallback(async (currentUser = auth.currentUser) => {
+    if (!currentUser) return;
+    const version = session.current;
+    setCoursesLoading(true);
+    setCoursesError("");
+    try {
+      const [enrolled, created] = await Promise.all([
+        getDocs(
+          query(
+            collection(db, "enrolledCourses"),
+            where("userID", "==", currentUser.uid),
+          ),
+        ),
+        getDocs(
+          query(
+            collection(db, "courses"),
+            where("userID", "==", currentUser.uid),
+          ),
+        ),
+      ]);
+      if (version !== session.current) return;
+      setEnrolledCourses(decode(enrolled));
+      setCreatedCourses(decode(created));
+    } catch {
+      if (version === session.current)
+        setCoursesError(
+          "No hemos podido cargar tus cursos. Inténtalo de nuevo.",
+        );
+    } finally {
+      if (version === session.current) setCoursesLoading(false);
+    }
   }, []);
 
-  /*
-    On firestore db:
-    courses: collection of courses. It has 3 fields: JSON string of course and userID
-    enrolledCourses: collection of enrolled courses. It has 3 fields: courseID, originalCourseID and userID
-  */
+  useEffect(
+    () =>
+      auth.onAuthStateChanged((currentUser) => {
+        session.current += 1;
+        catalogRequest.current = null;
+        setUser(currentUser);
+        setEnrolledCourses([]);
+        setCreatedCourses([]);
+        setAllCourses([]);
+        setCatalogStatus("idle");
+        setCoursesError("");
+        setAuthReady(true);
+        if (currentUser) refreshCourses(currentUser);
+        else setCoursesLoading(false);
+      }),
+    [refreshCourses],
+  );
 
-  // get courses from db from course ids of enrolled courses
-  const fetchEnrolledCourses = async (userId) => {
-    const querySnapshot = await getDocs(query(collection(db, "enrolledCourses"), where("userID", "==", userId)));
-    if (querySnapshot.empty) {
-      setEnrolledCourses([]);
-      return;
-    }
-    const enrolledCoursesTemp = querySnapshot.docs.map((doc) => ({...doc.data(), courseJSON: JSON.parse(doc.data().courseString), courseID: doc.id}));
-    setEnrolledCourses(enrolledCoursesTemp);
-  };
-
-  const fetchCreatedCourses = async (userId) => {
-    const querySnapshot = await getDocs(query(collection(db, "courses"), where("userID", "==", userId)));
-    if (querySnapshot.empty) {
-      setCreatedCourses([]);
-      return;
-    }
-    const createdCoursesTemp = querySnapshot.docs.map((doc) => ({...doc.data(), courseJSON: JSON.parse(doc.data().courseString), courseID: doc.id}));
-    setCreatedCourses(createdCoursesTemp);
-  };
-
-  const fetchAllCourses = async () => {
-    const querySnapshot = await getDocs(collection(db, "courses"));
-    if (querySnapshot.empty) {
-      setAllCourses([]);
-      return;
-    }
-    const allCoursesTemp = querySnapshot.docs.map((doc) => ({...doc.data(), courseJSON: JSON.parse(doc.data().courseString), courseID: doc.id}));
-    setAllCourses(allCoursesTemp);
-  };
-
-  // Update the completion percentage for a course
-  const updateCompletionPercentage = (course) => {
-    const completedStages = course.stages.filter(stage => stage.completed);
-    const completionPercentage = (completedStages.length / course.stages.length) * 100;
-    course.completionPercentage = completionPercentage;
-    return course;
-  };
-
-  // Complete a stage if the test score is greater or equal to 50
-  const completeStageIfScoreIs50 = (stage) => {
-    if (stage.testScore >= 50) {
-        stage.completed = true;
-    }
-    return stage
-  };
+  const fetchAllCourses = useCallback(() => {
+    if (catalogRequest.current) return catalogRequest.current;
+    const version = session.current;
+    setCatalogStatus("loading");
+    const request = getDocs(collection(db, "courses"))
+      .then((snapshot) => {
+        if (version !== session.current) return;
+        setAllCourses(decode(snapshot));
+        setCatalogStatus("ready");
+      })
+      .catch(() => {
+        if (version === session.current) setCatalogStatus("error");
+      })
+      .finally(() => {
+        if (catalogRequest.current === request) catalogRequest.current = null;
+      });
+    catalogRequest.current = request;
+    return request;
+  }, []);
 
   const updateEnrolledCourse = async (course) => {
-    course.courseJSON = updateCompletionPercentage(course.courseJSON);
-    setEnrolledCourses(prevCourses => prevCourses.map(c => {
-      if (c.courseID === course.courseID) {
-        return course;
-      }
-      return c;
-    }));
-    //update in firebase
+    const stages = course.courseJSON.stages;
+    const updated = {
+      ...course,
+      courseJSON: {
+        ...course.courseJSON,
+        completionPercentage: stages.length
+          ? (stages.filter((stage) => stage.completed).length / stages.length) *
+            100
+          : 0,
+      },
+    };
     await updateDoc(doc(db, "enrolledCourses", course.courseID), {
-      courseString: JSON.stringify(course.courseJSON)
+      courseString: JSON.stringify(updated.courseJSON),
     });
+    setEnrolledCourses((previous) =>
+      previous.map((item) =>
+        item.courseID === course.courseID ? updated : item,
+      ),
+    );
   };
 
   const updateCreatedCourse = async (course) => {
-    // if course being sent is the enrolled one, get the original course
-    const id = course.originalCourseID ? course.originalCourseID : course.courseID;
-    setCreatedCourses(prevCourses => prevCourses.map(c => {
-      if (c.courseID === id) {
-        return course;
-      }
-      return c;
-    }));
-    //update in firebase
-    await updateDoc(doc(db, "courses", id), {
-      courseString: JSON.stringify(course.courseJSON)
+    await updateDoc(doc(db, "courses", course.courseID), {
+      courseString: JSON.stringify(course.courseJSON),
     });
-    if(course.originalCourseID){
-      updateEnrolledCourse(course)
-    }
+    setCreatedCourses((previous) =>
+      previous.map((item) =>
+        item.courseID === course.courseID ? course : item,
+      ),
+    );
+    setAllCourses((previous) =>
+      previous.map((item) =>
+        item.courseID === course.courseID ? course : item,
+      ),
+    );
   };
 
-  const updateStage = (course, stage) => {
-    stage = completeStageIfScoreIs50(stage);
-    // reusing updateEnrolledCourse function 
-    course.courseJSON.stages = 
-      course.courseJSON.stages.map(s => {
-        if (s.id === stage.id) {
-          return stage;
-        }
-        return s;
-      })
-    
-    updateEnrolledCourse(course);
+  const updateStage = async (course, stage) => {
+    const updatedStage = {
+      ...stage,
+      completed: stage.completed || stage.testScore >= 50,
+    };
+    await updateEnrolledCourse({
+      ...course,
+      courseJSON: {
+        ...course.courseJSON,
+        stages: course.courseJSON.stages.map((item) =>
+          item.id === stage.id ? updatedStage : item,
+        ),
+      },
+    });
   };
 
   const createCourse = (course) => {
-    course.courseJSON = JSON.parse(course.courseString);
-    setCreatedCourses(prevCourses => [...prevCourses, course]);
-    setAllCourses(prevCourses => [...prevCourses, course]);
+    if (course.userID !== auth.currentUser?.uid) return;
+    const created = { ...course, courseJSON: JSON.parse(course.courseString) };
+    setCreatedCourses((previous) => [...previous, created]);
+    setAllCourses((previous) => [...previous, created]);
   };
 
   const addEnrolledCourse = (course) => {
-    setEnrolledCourses(prevCourses => [...prevCourses, course]);
-  };
-
-  console.log(enrolledCourses)
-  // Wrap the functions to be passed down through context
-  const contextValue = {
-    enrolledCourses,
-    createdCourses,
-    updateEnrolledCourse,
-    updateCreatedCourse,
-    updateStage,
-    createCourse,
-    allCourses,
-    fetchAllCourses,
-    addEnrolledCourse,
+    if (course.userID !== auth.currentUser?.uid) return;
+    setEnrolledCourses((previous) => [...previous, course]);
   };
 
   return (
-    <CourseContext.Provider value={contextValue}>
+    <CourseContext.Provider
+      value={{
+        user,
+        authReady,
+        coursesLoading,
+        coursesError,
+        refreshCourses,
+        enrolledCourses,
+        createdCourses,
+        allCourses,
+        catalogStatus,
+        fetchAllCourses,
+        updateEnrolledCourse,
+        updateCreatedCourse,
+        updateStage,
+        createCourse,
+        addEnrolledCourse,
+      }}
+    >
       {children}
     </CourseContext.Provider>
   );
 };
-
-// Custom hook to consume the context
 export const useCourseContext = () => useContext(CourseContext);
