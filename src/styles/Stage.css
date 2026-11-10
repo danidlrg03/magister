@@ -1,0 +1,115 @@
+/* Stage.css */
+.loading-message {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 10%;
+    font-size: 18px;
+    color: #333;
+  }
+  
+  .course-details {
+    max-width: 80%;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  .course-details h3 {
+    margin-bottom: 10px;
+  }
+  
+  .course-details h5 {
+    margin-bottom: 10px;
+  }
+  
+  .course-details p {
+    margin-bottom: 15px;
+  }
+  
+  .course-details .take-test-button,
+  .course-details .take-test-button-disabled {
+    padding: 10px 20px;
+    width: 100%;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto;
+    display: block;
+  }
+  
+  .course-details .take-test-button {
+    background-color: #004FA3;
+  }
+  
+  .course-details .take-test-button:hover {
+    background-color: #002C5C;
+  }
+  
+  .course-details .take-test-button-disabled {
+    background-color: #878787;
+    cursor: not-allowed;
+  }
+  
+  .course-details .error-text {
+    color: red;
+    font-size: 18px;
+    margin-top: 10px;
+    text-align: center;
+  }
+  
+  .stage-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+  
+  .stage-header button {
+    background-color: #004FA3;
+    color: #fff;
+    border: none;
+    width: 20%;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  
+  .stage-header a button {
+    width: 100%;
+  }
+  
+  .stage-header button:hover {
+    background-color: #002C5C;
+  }
+  
+  .modal {
+    padding: 1%;
+    border: 1px solid #ccc;
+    margin: auto;
+    width: 80%;
+    max-width: 400px;
+    height: 20%;
+    background-color: white;
+    align-content: center;
+    text-align: center;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  .modal-button {
+    background-color: #004FA3;
+    color: #fff;
+    border: none;
+    border-radius: 3px;
+    padding: 5px 10px;
+    margin: 5%;
+    text-decoration: none;
+    cursor: pointer;
+  }
+  

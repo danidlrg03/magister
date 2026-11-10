@@ -1,0 +1,57 @@
+/* Form.css */
+.auth-form-container {
+    max-width: 400px;
+    padding: 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    margin: auto;
+    margin-top: 3%;
+  }
+  
+  .form-group {
+    padding: 10px 20px;
+
+  }
+  
+
+  .form-group input {
+    padding: 10px 20px;
+    width: 87%;
+
+  }
+  
+  .authentication-button {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #004FA3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 5% 0;
+  }
+  
+  button:hover {
+    background-color: #002C5C;
+  }
+  
+  .form-p p {
+    margin-top: 15px;
+  }
+  
+  p a {
+    color: #004FA3;
+    text-decoration: none;
+  }
+  
+  p a:hover {
+    text-decoration: underline;
+  }
+
+  .auth-form-container .error-message {
+    color: red;
+    font-size: 16px;
+    text-align: center;
+    margin: 2%;
+  }
+  

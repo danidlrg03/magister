@@ -1,0 +1,104 @@
+.course-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.course-header button {
+    background-color: #004FA3;
+    color: #fff;
+    border: none;
+    width: 20%;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.course-header a button {
+    width: 100%;
+}
+
+.course-header button:hover {
+    background-color: #002C5C;
+}
+
+.course-public-text {
+    margin: 0 0;
+    color: green;
+}
+
+.course-details {
+    max-width: 900px;
+    margin: 0 auto;
+    margin-top: 10px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.course-details h3 {
+    margin-bottom: 10px;
+}
+
+.course-details p {
+    margin-bottom: 15px;
+}
+
+.course-details button {
+    background-color: #004FA3;
+    color: #fff;
+    border: none;
+    width: 20%;
+    border-radius: 3px;
+    padding: 5px 10px;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.course-details button:hover,
+.enroll-button:hover {
+    background-color: #002C5C;
+}
+
+.map {
+    margin-top: 20px;
+    text-align: center;
+    align-items: center;
+}
+
+.flags {
+    width: 100%;
+    justify-content: center;
+    /*display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;*/
+}
+
+.flag {
+    width: 40px;
+    height: 40px;
+    border-radius: 30%;
+    position: relative;
+    margin-top: 10px;
+}
+
+
+/*.flag::before {*/
+/*    content: "";*/
+/*    position: absolute;*/
+/*    top: 50%;*/
+/*    left: 60px; !* Adjust this value to control the position of the line start *!*/
+/*    width: 100%; !* Adjust this value to control the length of the line *!*/
+/*    height: 5px; !* Adjust this value to control the thickness of the line *!*/
+/*    background-color: #ccc;*/
+/*    pointer-events: none; !* Disable pointer events on the line *!*/
+/*}*/
+
+.flag-icon {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+

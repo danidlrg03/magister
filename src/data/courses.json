@@ -1,0 +1,879 @@
+
+[
+  {
+    "id": 0,
+    "visible": false,
+    "title": "Curso de Desarrollo de JavaScript para Principiantes",
+    "description": "Este curso está diseñado para usuarios aficionados que desean comenzar a aprender JavaScript desde cero. Cubre conceptos fundamentales y progresa gradualmente hacia temas más avanzados.",
+    "completionPercentage": 0,
+    "isPublic": true,
+    "stages": [
+      {
+        "id": 1,
+        "title": "Introducción a JavaScript",
+        "description": "Conoce JavaScript y su papel en el desarrollo web.",
+        "content": "JavaScript es un lenguaje de programación interpretado de alto nivel utilizado principalmente para crear páginas web interactivas. Agrega comportamiento a HTML y CSS, haciendo que las páginas web sean dinámicas y atractivas.\n\nTemas cubiertos en esta etapa:\n\n- ¿Qué es JavaScript?\n- Historia y evolución de JavaScript\n- JavaScript en el desarrollo web\n- Configuración de un entorno de desarrollo\n\nJavaScript se puede escribir directamente en un archivo HTML o en un archivo .js separado y enlazado al documento HTML mediante la etiqueta <script>. Los entornos de desarrollo modernos como Visual Studio Code proporcionan herramientas poderosas para escribir y depurar código JavaScript.\n\nAhora, sumerjámonos en los conceptos básicos de la sintaxis y las características de JavaScript.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál de las siguientes opciones describe mejor JavaScript?",
+            "answers": ["Un lenguaje de script utilizado para el desarrollo web", "Un lenguaje de marcado para estilizar páginas web", "Un sistema de gestión de bases de datos", "Un lenguaje de programación del lado del servidor"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el papel principal de JavaScript en el desarrollo web?",
+            "answers": ["Crear páginas web estáticas", "Mejorar la interactividad de la página web", "Estilizar páginas web", "Gestionar bases de datos"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cómo se incluye típicamente JavaScript en un documento HTML?",
+            "answers": ["Usando la etiqueta <style>", "Usando la etiqueta <link>", "Usando la etiqueta <script>", "Usando la etiqueta <body>"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué entorno de desarrollo se utiliza comúnmente para programar en JavaScript?",
+            "answers": ["Eclipse", "Visual Studio Code", "NetBeans", "Sublime Text"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cuál es la extensión de archivo para archivos JavaScript?",
+            "answers": [".html", ".css", ".js", ".php"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Conceptos Básicos de JavaScript: Variables y Tipos de Datos",
+        "description": "Aprende sobre variables, tipos de datos y operaciones básicas en JavaScript.",
+        "content": "Las variables son contenedores para almacenar valores de datos. En JavaScript, las variables se pueden declarar utilizando las palabras clave 'var', 'let' o 'const'. \n\nLos tipos de datos en JavaScript incluyen números, cadenas, booleanos, matrices, objetos y más. Cada tipo de datos tiene su propio conjunto de operaciones y métodos.\n\nTemas cubiertos en esta etapa:\n\n- Declaración y asignación de variables\n- Tipos de datos en JavaScript\n- Operaciones básicas y expresiones\n- Trabajar con cadenas y números\n\nJavaScript proporciona tipificación dinámica, lo que significa que las variables pueden contener valores de cualquier tipo de datos.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué palabra clave se usa para declarar una variable constante en JavaScript?",
+            "answers": ["var", "let", "const", "estático"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué tipo de datos se usa para almacenar texto en JavaScript?",
+            "answers": ["Número", "Booleano", "Cadena", "Matriz"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cómo se declara una variable en JavaScript?",
+            "answers": ["Usando la palabra clave \"variable\"", "Usando la palabra clave \"var\"", "Usando la palabra clave \"let\"", "Usando la palabra clave \"const\""],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué operador se utiliza para concatenar cadenas en JavaScript?",
+            "answers": ["+", "-", "*", "/"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el resultado de 10 * \"5\" en JavaScript?",
+            "answers": ["50", "10", "5", "Error"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Flujo de Control y Bucles",
+        "description": "Comprende cómo controlar el flujo de tu código JavaScript mediante declaraciones condicionales y bucles.",
+        "content": "Las declaraciones de flujo de control te permiten tomar decisiones en tu código basadas en condiciones. JavaScript proporciona if...else, switch y operadores ternarios para ejecución condicional.\n\nLos bucles se utilizan para ejecutar un bloque de código repetidamente. JavaScript admite bucles for, while y do...while.\n\nTemas cubiertos en esta etapa:\n\n- Declaraciones condicionales (if...else, switch)\n- Operadores de comparación\n- Operadores lógicos\n- Estructuras de bucles (for, while, do...while)\n\nComprender el flujo de control y los bucles es esencial para construir aplicaciones dinámicas e interactivas.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál de las siguientes es un operador de comparación de JavaScript?",
+            "answers": ["==", "++", "**", "&&"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuántas veces se ejecutará el siguiente bucle? \nfor (var i = 0; i < 5; i++) { }",
+            "answers": ["0", "4", "5", "6"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué operador se utiliza para el AND lógico en JavaScript?",
+            "answers": ["&", "&&", "||", "!="],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cuál será el resultado del siguiente código? \nvar x = 5; \nif (x > 10) { console.log(\"Mayor que 10\"); } else { console.log(\"Menor o igual que 10\"); }",
+            "answers": ["Mayor que 10", "Menor que 10", "Menor o igual que 10", "Error"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué bucle ejecuta su bloque de código al menos una vez?",
+            "answers": ["Bucle for", "Bucle while", "Bucle do...while", "Declaración if"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Funciones y Ámbito",
+        "description": "Explora el concepto de funciones y cómo se pueden utilizar para organizar y reutilizar código.",
+        "content": "Las funciones son bloques de código que se pueden definir y llamar para realizar una tarea específica. Las funciones de JavaScript pueden tomar parámetros y devolver valores.\n\nEl ámbito se refiere a la visibilidad de las variables dentro de diferentes partes de tu código. JavaScript tiene ámbito de función y ámbito de bloque.\n\nTemas cubiertos en esta etapa:\n\n- Declaración e invocación de funciones\n- Parámetros y valores de retorno\n- Expresiones de funciones y funciones de flecha\n- Ámbito en JavaScript\n\nEntender las funciones y el ámbito es crucial para escribir código modular y mantenible.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué palabra clave se utiliza para declarar una función en JavaScript?",
+            "answers": ["function", "declare", "func", "def"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el propósito de los parámetros en una función de JavaScript?",
+            "answers": ["Para almacenar datos", "Para realizar operaciones", "Para especificar condiciones", "Para recibir entradas"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Cómo se llama a una función llamada \"miFuncion\" en JavaScript?",
+            "answers": ["miFuncion()", "llamar miFuncion", "invocar miFuncion", "ejecutar miFuncion"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué tipo de función no tiene su propio valor \"this\"?",
+            "answers": ["Función regular", "Función de flecha", "Función anónima", "Función generadora"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cuál es el ámbito de una variable declarada con la palabra clave \"let\"?",
+            "answers": ["Ámbito global", "Ámbito de función", "Ámbito de bloque", "Ámbito de módulo"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Arrays y Objetos",
+        "description": "Aprende sobre dos estructuras de datos fundamentales en JavaScript: arrays y objetos.",
+        "content": "Los arrays y objetos son fundamentales para almacenar y organizar datos en JavaScript.\n\nLos arrays son colecciones ordenadas de valores, indexados por posiciones numéricas. Pueden contener elementos de cualquier tipo de datos.\n\nLos objetos son colecciones de pares clave-valor, donde cada clave es una cadena (o símbolo) y cada valor puede ser cualquier tipo de datos.\n\nTemas cubiertos en esta etapa:\n\n- Creación y manipulación de arrays\n- Acceso a elementos de arrays\n- Métodos de arrays (push, pop, shift, unshift, etc.)\n- Trabajo con objetos y propiedades\n\nDominar los arrays y objetos abre posibilidades para la manipulación de datos y estructuras de datos complejas.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cómo se accede al primer elemento de un array llamado \"miArray\" en JavaScript?",
+            "answers": ["miArray[0]", "miArray.first()", "miArray.first", "miArray.firstElement"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué método se utiliza para agregar elementos al final de un array en JavaScript?",
+            "answers": ["push()", "add()", "insert()", "append()"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cómo se accede al valor asociado con una clave específica en un objeto JavaScript?",
+            "answers": ["Por índice", "Por nombre de propiedad", "Usando el método find()", "Por posición"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué símbolo se utiliza para separar pares clave-valor en un objeto JavaScript?",
+            "answers": ["Coma (,)", "Dos puntos (:)", "Punto y coma (;)", "Igual (=)"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cuál es el resultado de la siguiente expresión? \ntypeof [1, 2, 3]",
+            "answers": ["\"array\"", "\"object\"", "\"number\"", "\"undefined\""],
+            "correctAnswer": 1
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 1,
+    "visible": false,
+    "title": "Curso Avanzado de Programación en React",
+    "description": "Este curso avanzado de programación en React está diseñado para desarrolladores experimentados que desean profundizar en los aspectos más complejos y avanzados de la creación de aplicaciones con React.",
+    "completionPercentage": 0,
+    "isPublic": true,
+    "stages": [
+      {
+        "id": 1,
+        "title": "Optimización de Rendimiento en Aplicaciones React",
+        "description": "Mejora el rendimiento de tus aplicaciones React mediante técnicas avanzadas de optimización.",
+        "content": "La optimización de rendimiento en aplicaciones React es crucial para garantizar una experiencia de usuario fluida y rápida. En esta etapa, exploraremos diversas estrategias para mejorar el rendimiento de tus aplicaciones. \n\nUna de las técnicas más importantes es el uso de la memoización de componentes. Aprenderás a identificar componentes que se renderizan innecesariamente y a utilizar React.memo para evitar re-renderizaciones costosas. También profundizaremos en el uso de shouldComponentUpdate y PureComponent para optimizar la renderización de componentes de clase. \n\nAdemás, discutiremos cómo implementar la carga diferida (lazy loading) y el pre-carga de componentes para reducir el tiempo de carga inicial de la aplicación. Exploraremos herramientas como React.lazy y Suspense para lograr esto de manera eficiente. \n\nOtra estrategia importante es la optimización del renderizado en el lado del servidor (SSR). Aprenderás a implementar el SSR en tus aplicaciones React para mejorar el tiempo de carga inicial y la SEO. Discutiremos técnicas como el renderizado de componentes en el servidor con ReactDOMServer y la pre-carga de datos para mejorar el rendimiento de la aplicación. \n\nAl finalizar esta etapa, estarás equipado con las habilidades necesarias para optimizar el rendimiento de tus aplicaciones React y proporcionar a tus usuarios una experiencia de usuario excepcionalmente rápida y receptiva.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál es una técnica para mejorar el rendimiento de los componentes React evitando re-renderizaciones innecesarias?",
+            "answers": ["React.memo", "React.lazy", "useState", "useEffect"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué herramienta se utiliza para implementar la carga diferida de componentes en React?",
+            "answers": ["React.lazy", "React.memo", "useEffect", "useState"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué técnica se emplea para optimizar el renderizado en el lado del servidor en aplicaciones React?",
+            "answers": ["SSR", "CSR", "React.lazy", "Redux"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué método se utiliza para renderizar componentes en el servidor en React?",
+            "answers": ["ReactDOMServer", "useState", "useEffect", "React.memo"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué función se utiliza para evitar la renderización innecesaria de componentes de clase en React?",
+            "answers": ["shouldComponentUpdate", "useEffect", "useState", "React.memo"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Gestión Avanzada del Estado con React Hooks",
+        "description": "Domina el manejo avanzado del estado en aplicaciones React utilizando los React Hooks.",
+        "content": "El manejo del estado es fundamental en las aplicaciones React, y los React Hooks proporcionan una forma elegante y funcional de manejar el estado en componentes funcionales. En esta etapa, exploraremos técnicas avanzadas para gestionar el estado de tus aplicaciones utilizando React Hooks. \n\nAprenderás a utilizar useEffect para manejar efectos secundarios en tus componentes, como la suscripción a eventos o la realización de solicitudes HTTP. Discutiremos cómo trabajar con dependencias en useEffect para garantizar un comportamiento consistente y evitar efectos secundarios inesperados. \n\nAdemás, profundizaremos en el uso de useContext y useReducer para gestionar el estado compartido de manera más eficiente. Explorarás cómo utilizar useContext para acceder al contexto en componentes secundarios sin necesidad de pasar props manualmente. También aprenderás a utilizar useReducer para manejar estados más complejos y realizar actualizaciones inmutables del estado. \n\nAl finalizar esta etapa, serás capaz de gestionar el estado de tus aplicaciones React de manera más efectiva y aprovechar todo el poder de los React Hooks para crear componentes funcionales más robustos y fáciles de mantener.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué hook de React se utiliza para manejar efectos secundarios en componentes funcionales?",
+            "answers": ["useEffect", "useState", "useContext", "useReducer"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué hook se utiliza para acceder al contexto en componentes funcionales en React?",
+            "answers": ["useContext", "useEffect", "useState", "useReducer"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál de los siguientes hooks se utiliza para manejar estados más complejos en React?",
+            "answers": ["useReducer", "useState", "useEffect", "useContext"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué hook de React se utiliza para manejar el estado compartido de manera más eficiente?",
+            "answers": ["useContext", "useState", "useEffect", "useReducer"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué hook se utiliza para realizar actualizaciones inmutables del estado en React?",
+            "answers": ["useReducer", "useState", "useContext", "useEffect"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Patrones Avanzados de Renderizado en React",
+        "description": "Explora patrones avanzados de renderizado en React para mejorar la estructura y rendimiento de tus aplicaciones.",
+        "content": "El renderizado en React es un aspecto fundamental de la creación de aplicaciones eficientes y fáciles de mantener. En esta etapa, profundizaremos en patrones avanzados de renderizado que te permitirán mejorar la estructura y el rendimiento de tus aplicaciones React. \n\nExploraremos el patrón de renderizado condicional y cómo utilizarlo para renderizar component es de manera condicional basados en el estado de la aplicación. Aprenderás a utilizar operadores lógicos y el operador condicional ternario para renderizar contenido de manera dinámica. \n\nAdemás, discutiremos el patrón de renderizado de listas y cómo utilizarlo para renderizar listas dinámicas de elementos en React. Aprenderás a utilizar el método map para iterar sobre arrays y renderizar elementos de manera eficiente. También exploraremos técnicas avanzadas como el uso de keys para optimizar el rendimiento de las listas renderizadas. \n\nPor último, profundizaremos en el patrón de renderizado de elementos hijos y cómo utilizarlo para crear componentes más flexibles y reutilizables en React. Aprenderás a utilizar props.children para pasar contenido JSX dinámico a tus componentes y a utilizar técnicas de composición para crear componentes más complejos a partir de componentes más simples. \n\nAl finalizar esta etapa, estarás familiarizado con los patrones avanzados de renderizado en React y serás capaz de aplicarlos de manera efectiva para mejorar la estructura y el rendimiento de tus aplicaciones.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué patrón se utiliza para renderizar componentes de manera condicional en React?",
+            "answers": ["Renderizado condicional", "Renderizado de listas", "Renderizado de elementos hijos", "Renderizado de propiedades"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué método se utiliza para iterar sobre arrays y renderizar elementos de manera eficiente en React?",
+            "answers": ["map", "filter", "forEach", "reduce"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es la técnica utilizada para optimizar el rendimiento de las listas renderizadas en React?",
+            "answers": ["Keys", "Props", "State", "Refs"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué se utiliza para pasar contenido JSX dinámico a los componentes en React?",
+            "answers": ["props.children", "state", "context", "hooks"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué técnica se utiliza para crear componentes más complejos a partir de componentes más simples en React?",
+            "answers": ["Composición", "Herencia", "Encapsulación", "Polimorfismo"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Integración de Bibliotecas Externas con React",
+        "description": "Aprende a integrar y utilizar bibliotecas externas en tus proyectos React de manera efectiva.",
+        "content": "La integración de bibliotecas externas es una parte importante del desarrollo de aplicaciones React, ya que te permite aprovechar funcionalidades adicionales y acelerar el proceso de desarrollo. En esta etapa, exploraremos cómo integrar y utilizar bibliotecas externas en tus proyectos React de manera efectiva. \n\nAprenderás a utilizar npm para instalar bibliotecas externas en tus proyectos React y a importarlas en tus archivos de código. Discutiremos cómo gestionar las dependencias y las versiones de las bibliotecas para garantizar la estabilidad y la compatibilidad de tu aplicación. \n\nExploraremos cómo integrar bibliotecas populares como Redux para gestionar el estado de la aplicación de manera más eficiente. Aprenderás a configurar Redux en tu proyecto y a utilizar acciones y reducers para gestionar el estado de manera predecible. \n\nAdemás, discutiremos cómo integrar bibliotecas de UI como Material-UI para agregar componentes de interfaz de usuario preestilizados a tus proyectos React. Aprenderás a utilizar los componentes de Material-UI y a personalizar su apariencia y comportamiento según las necesidades de tu aplicación. \n\nAl finalizar esta etapa, serás capaz de integrar y utilizar bibliotecas externas en tus proyectos React de manera efectiva, lo que te permitirá desarrollar aplicaciones más potentes y funcionales con mayor rapidez.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué herramienta se utiliza para instalar bibliotecas externas en proyectos React?",
+            "answers": ["npm", "git", "yarn", "webpack"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es una biblioteca popular utilizada para gestionar el estado en aplicaciones React?",
+            "answers": ["Redux", "React Router", "Axios", "Lodash"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué biblioteca se utiliza para agregar componentes de interfaz de usuario preestilizados a proyectos React?",
+            "answers": ["Material-UI", "Bootstrap", "Semantic UI", "Ant Design"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué se utiliza para configurar y utilizar Redux en proyectos React?",
+            "answers": ["Actions y reducers", "useState y useEffect", "props y state", "context y hooks"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el comando utilizado para importar una biblioteca externa en un archivo de código en React?",
+            "answers": ["import", "require", "export", "install"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Implementación Avanzada de Patrones de Diseño en React",
+        "description": "Aplica patrones de diseño avanzados en tus proyectos React para mejorar la estructura y escalabilidad del código.",
+        "content": "Los patrones de diseño son herramientas poderosas que te permiten crear código más limpio, estructurado y fácil de mantener en tus proyectos React. En esta etapa, exploraremos patrones de diseño avanzados y cómo aplicarlos en tus proyectos React para mejorar la estructura y escalabilidad del código. \n\nAprenderás sobre el patrón de diseño contenedor-presentación (container-presentation) y cómo utilizarlo para separar la lógica de negocio de la presentación en tus componentes React. Exploraremos cómo crear contenedores de alto nivel que gestionen el estado y la lógica de negocio, mientras que los componentes de presentación se encargan únicamente de renderizar la interfaz de usuario. \n\nAdemás, discutiremos el patrón de diseño de render props y cómo utilizarlo para compartir lógica entre componentes en React. Aprenderás a crear componentes que acepten funciones como props y a utilizarlas para compartir comportamiento entre componentes de manera flexible y reutilizable. \n\nTambién exploraremos el patrón de diseño de componentes de orden superior (Higher Order Components, HOC) y cómo utilizarlo para reutilizar lógica en tus componentes React. Aprenderás a crear HOCs que envuelvan componentes existentes y agreguen funcionalidades adicionales de manera transparente. \n\nAl finalizar esta etapa, estarás familiarizado con los patrones de diseño avanzados en React y serás capaz de aplicarlos de manera efectiva en tus proyectos para mejorar la estructura, escalabilidad y mantenibilidad del código.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué patrón de diseño se utiliza para separar la lógica de negocio de la presentación en componentes React?",
+            "answers": ["Contenedor-Presentación", "Render Props", "HOC", "Singleton"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el propósito principal del patrón de diseño de render props en React?",
+            "answers": ["Compartir lógica entre componentes", "Separar componentes de presentación y contenedores", "Agregar funcionalidades adicionales a componentes", "Crear componentes reutilizables"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué patrón de diseño se utiliza para reutilizar lógica en componentes React?",
+            "answers": ["Componentes de orden superior (HOC)", "Contenedor-Presentación", "Render Props", "Singleton"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es la función principal de los componentes de orden superior (HOC) en React?",
+            "answers": ["Envolver componentes y agregar funcionalidades adicionales", "Compartir lógica entre componentes", "Separar componentes de presentación y contenedores", "Crear componentes reutilizables"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el propósito del patrón de diseño contenedor-presentación en React?",
+            "answers": ["Separar la lógica de negocio de la presentación", "Compartir lógica entre componentes", "Agregar funcionalidades adicionales a componentes", "Crear componentes reutilizables"],
+            "correctAnswer": 0
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 2,
+    "visible": false,
+    "title": "Maestría en la Elaboración de Galletas para Expertos",
+    "description": "Este curso intensivo está diseñado para panaderos expertos que desean llevar sus habilidades en la elaboración de galletas al siguiente nivel. Desde dominar el arte de la preparación de la masa hasta perfeccionar el equilibrio de sabores y texturas, este curso te equipará con los conocimientos y técnicas necesarios para crear galletas excepcionales.",
+    "completionPercentage": 0,
+    "isPublic": true,
+    "stages": [
+      {
+        "id": 1,
+        "title": "Selección Avanzada de Ingredientes",
+        "description": "En esta etapa, exploraremos las intrincadas selecciones de ingredientes para la elaboración de galletas, centrándonos en el impacto de diferentes tipos de harina, azúcares, grasas y saborizantes.",
+        "content": "Seleccionar los ingredientes adecuados es crucial para lograr la textura y el sabor deseados en tus galletas. La harina sirve como la base de tu masa, proporcionando estructura y estabilidad. Experimenta con diferentes tipos de harina, como harina para todo uso, harina de pan y harina para repostería, para comprender sus características únicas. De igual manera, explora la variedad de azúcares disponibles, desde el azúcar granulado hasta el azúcar moreno y más allá, y aprende cómo cada uno contribuye al sabor y la textura de tus galletas.\n\nCuando se trata de grasas, considera el papel de la mantequilla, la manteca vegetal y los aceites en tus recetas. Comprender sus puntos de fusión y perfiles de sabor te ayudará a lograr el equilibrio perfecto entre riqueza y ternura. Por último, sumérgete en el mundo de los saborizantes, incluyendo extractos, especias y añadidos, y descubre cómo pueden elevar tus galletas a nuevas alturas de delicia.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué papel desempeña la harina en la elaboración de galletas?",
+            "answers": ["Proporciona estructura y estabilidad", "Agrega dulzura", "Mejora el sabor", "Aumenta el contenido de humedad"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué tipo de azúcar se utiliza comúnmente para lograr galletas masticables?",
+            "answers": ["Azúcar granulado", "Azúcar moreno", "Azúcar glas", "Miel"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cuál es el propósito de las grasas en las recetas de galletas?",
+            "answers": ["Agrega color", "Proporciona levadura", "Aumenta la vida útil", "Contribuye riqueza y ternura"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Cuál de los siguientes se considera un saborizante para galletas?",
+            "answers": ["Huevos", "Extracto de vainilla", "Polvo de hornear", "Sal"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué debes considerar al seleccionar ingredientes para galletas?",
+            "answers": ["Precio", "Color", "Textura", "Todo lo anterior"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Dominio de Técnicas de Masa",
+        "description": "Esta etapa se centrará en las diversas técnicas involucradas en la preparación de la masa para galletas, incluidos los métodos de mezcla, la hidratación de la masa y el control de la temperatura.",
+        "content": "Lograr la masa de galletas perfecta requiere precisión y habilidad. Explora diferentes métodos de mezcla, como batido, derretido y plegado, y comprende cómo cada uno afecta la textura y la estructura del producto final. Además, aprende la importancia de la hidratación de la masa y cómo ajustar la proporción de ingredientes húmedos a secos puede influir en la masticabilidad y la crujiente de tus galletas.\n\nEl control de temperatura es otro factor crítico en la preparación de la masa. Experimenta con tiempos de enfriamiento y reposo para optimizar el desarrollo del sabor y la textura de tus galletas. Al dominar estas técnicas, podrás crear masa para galletas que sea consistente y deliciosa.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál es el propósito de los métodos de mezcla en la preparación de la masa para galletas?",
+            "answers": ["Agrega color", "Aumenta la vida útil", "Afecta la textura y la estructura", "Mejora el sabor"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cómo afecta el ajuste de la hidratación de la masa de galletas a su textura?",
+            "answers": ["La hace más dulce", "Aumenta la masticabilidad", "Reduce la extensión", "Mejora la vida útil"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Por qué es importante el control de temperatura en la preparación de la masa?",
+            "answers": ["Para evitar sobre-mezclar", "Para reducir el tiempo de cocción", "Para optimizar el sabor y la textura", "Para mejorar el color"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cuál es el propósito de enfriar la masa para galletas?",
+            "answers": ["Para acelerar el tiempo de cocción", "Para mejorar el sabor", "Para relajar el gluten", "Para prevenir la extensión"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Qué factores pueden afectar la consistencia de la masa para galletas?",
+            "answers": ["Humedad", "Altitud", "Temperatura del horno", "Todo lo anterior"],
+            "correctAnswer": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Desarrollo y Combinación de Sabores",
+        "description": "En esta etapa, exploraremos técnicas avanzadas para desarrollar y combinar sabores en recetas de galletas, incluido el uso de ingredientes complementarios y el equilibrio de sabores.",
+        "content": "Eleva tus creaciones de galletas dominando el arte del desarrollo y combinación de sabores. Explora la sinergia entre diferentes ingredientes y aprende a crear perfiles de sabor armoniosos que estimulen las papilas gustativas. Experimenta con una variedad de combinaciones de sabores, desde parejas clásicas como chocolate y mantequilla de cacahuete hasta mezclas más aventureras como lavanda y limón.\n\nAdemás, adéntrate en los principios del equilibrio de sabores, comprendiendo cómo ajustar la dulzura, la acidez y la amargura para lograr la armonía de sabores perfecta. Al perfeccionar estas habilidades, podrás crear galletas que no solo sean deliciosas, sino también sofisticadas y memorables.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué se entiende por equilibrio de sabores en la preparación de galletas?",
+            "answers": ["Uso de solo un tipo de sabor", "Ajuste de la proporción de dulzura, acidez y amargura", "Creación de sabores artificiales", "Agregar la mayor cantidad de sabor posible"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué se logra al desarrollar sabores en una receta de galletas?",
+            "answers": ["Textura crujiente", "Color vibrante", "Combinaciones de sabores armoniosas", "Tiempo de cocción más corto"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cuál es una combinación de sabores clásica en la elaboración de galletas?",
+            "answers": ["Canela y nuez moscada", "Chocolate y menta", "Vainilla y frambuesa", "Mango y coco"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Por qué es importante el equilibrio de sabores en las galletas?",
+            "answers": ["Para reducir el costo de los ingredientes", "Para aumentar la duración de la cocción", "Para mantener la consistencia", "Para crear una experiencia gustativa completa"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Qué efecto tiene la adición de sal en una receta de galletas?",
+            "answers": ["Aumenta la dulzura", "Reduce la masticabilidad", "Equilibra los sabores", "Causa amargura"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Técnicas de Formación y Horneado",
+        "description": "En esta etapa, exploraremos técnicas especializadas para dar forma a las galletas y hornearlas para lograr resultados óptimos en cuanto a sabor, textura y apariencia.",
+        "content": "La forma y el horneado son aspectos críticos en la elaboración de galletas que pueden afectar profundamente su resultado final. Aprende técnicas para dar forma a tus galletas, desde la clásica cuchara para galletas hasta el uso de moldes y cortadores especializados. Experimenta con diferentes técnicas de deposición y alisado para obtener galletas perfectamente formadas y uniformes.\n\nAdemás, domina los fundamentos del horneado de galletas, incluidos los ajustes de temperatura y tiempo, para lograr la textura y el dorado deseados. Explora el papel de los agentes de leudado y la importancia del espaciado adecuado en la bandeja para obtener galletas que sean crujientes por fuera y suaves por dentro.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál es una técnica común para dar forma a las galletas?",
+            "answers": ["Extender la masa con un rodillo", "Utilizar moldes y cortadores", "Utilizar una manga pastelera", "Dejar caer la masa con una cuchara"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué ajuste de temperatura es típicamente apropiado para hornear galletas?",
+            "answers": ["Alta temperatura", "Temperatura media", "Temperatura baja", "Depende de la receta"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Qué papel juegan los agentes de leudado en la formación de galletas?",
+            "answers": ["Aumentan el volumen", "Agregan color", "Reducen la humedad", "Hacen que las galletas sean más densas"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Por qué es importante el espaciado adecuado en la bandeja para hornear?",
+            "answers": ["Para reducir la cocción", "Para mejorar el sabor", "Para permitir la expansión durante el horneado", "Para acelerar el proceso de enfriamiento"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué efecto tiene un tiempo de horneado más largo en las galletas?",
+            "answers": ["Textura más suave", "Color más claro", "Textura más crujiente", "Menos dulzura"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Presentación y Almacenamiento",
+        "description": "En esta etapa final, aprenderás cómo presentar tus galletas de manera atractiva y cómo almacenarlas adecuadamente para mantener su frescura y sabor.",
+        "content": "La presentación de las galletas es tan importante como su sabor y textura. Descubre técnicas para decorar y empaquetar tus creaciones de galletas de manera atractiva, desde glaseado y espolvoreado hasta envoltura y etiquetado creativos. Aprende a realzar la apariencia de tus galletas para crear una impresión duradera en tus invitados o clientes.\n\nAdemás, comprende la importancia del almacenamiento adecuado para mantener la frescura y el sabor de tus galletas. Desde recipientes herméticos hasta métodos de congelación, explora diferentes estrategias para prolongar la vida útil de tus deliciosas creaciones y disfrutar de ellas durante más tiempo.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Por qué es importante la presentación de las galletas?",
+            "answers": ["Para mantener la frescura", "Para mejorar el sabor", "Para crear una impresión visual", "Para reducir el costo de producción"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué técnica se utiliza para decorar galletas con glaseado?",
+            "answers": ["Doblar", "Estampado", "Punteado", "Pincelado"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Qué método se recomienda para almacenar galletas para mantener su frescura?",
+            "answers": ["Dejarlas al aire libre", "Guardarlas en un recipiente hermético", "Envolverlas en papel de aluminio", "Congelarlas"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Cuál es una ventaja de congelar galletas?",
+            "answers": ["Aumenta su dulzura", "Mejora la textura", "Prolonga su vida útil", "Reduce el tiempo de horneado"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué tipo de envase es mejor para el almacenamiento a largo plazo de las galletas?",
+            "answers": ["Plástico transparente", "Bolsas de papel", "Latón abierto", "Recipiente hermético"],
+            "correctAnswer": 3
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "id": 3,
+    "visible": false,
+    "title": "Introducción a la Física para Aficionados",
+    "description": "Este curso te llevará a través de los conceptos básicos de la física de una manera relajada y accesible, perfecta para quienes están interesados en aprender sin presiones intensas.",
+    "completionPercentage": 0,
+    "isPublic": true,
+    "stages": [
+      {
+        "id": 1,
+        "title": "Conceptos Fundamentales de la Física",
+        "description": "Este primer módulo te introducirá a los principios básicos de la física y sus leyes fundamentales.",
+        "content": "La física es la ciencia que estudia las propiedades y el comportamiento de la materia y la energía en el espacio y el tiempo. Comenzaremos explorando conceptos como la cinemática, que se refiere al movimiento de los objetos, y la dinámica, que estudia las causas del movimiento. Aprenderás sobre la primera ley de Newton, también conocida como la ley de la inercia, que establece que un objeto en reposo tiende a permanecer en reposo, mientras que un objeto en movimiento tiende a permanecer en movimiento a menos que una fuerza externa actúe sobre él. También abordaremos la segunda ley de Newton, que relaciona la fuerza aplicada a un objeto con su masa y aceleración. Además, discutiremos la tercera ley de Newton, que establece que a toda acción siempre le corresponde una reacción igual y opuesta. Al comprender estos conceptos fundamentales, estarás bien equipado para avanzar en tu comprensión de la física.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál de las siguientes leyes de Newton establece que a toda acción siempre le corresponde una reacción igual y opuesta?",
+            "answers": ["Primera ley de Newton", "Segunda ley de Newton", "Tercera ley de Newton", "Cuarta ley de Newton"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué relación establece la segunda ley de Newton?",
+            "answers": ["Fuerza y velocidad", "Fuerza y aceleración", "Masa y velocidad", "Masa y aceleración"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Cuál de las siguientes palabras describe mejor el concepto de cinemática?",
+            "answers": ["Estudio de las fuerzas", "Estudio del movimiento", "Estudio de la energía", "Estudio de la materia"],
+            "correctAnswer": 1
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Movimiento y Fuerzas",
+        "description": "En este módulo, profundizaremos en el estudio del movimiento y las fuerzas que lo causan.",
+        "content": "Ahora que tienes una comprensión básica de las leyes de Newton, avanzaremos hacia temas más específicos. Discutiremos los diferentes tipos de movimiento, como el movimiento rectilíneo uniforme (MRU) y el movimiento rectilíneo uniformemente acelerado (MRUA). También exploraremos conceptos como la fuerza gravitatoria y la fuerza normal, así como la fricción y la fuerza de rozamiento. Estos conceptos te ayudarán a comprender mejor cómo interactúan los objetos en el mundo que nos rodea. Además, discutiremos la importancia del vector en la descripción del movimiento y cómo se relaciona con la dirección y la magnitud de una fuerza.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál de las siguientes fuerzas es responsable de mantener a los objetos en la superficie de la Tierra?",
+            "answers": ["Fuerza normal", "Fuerza gravitatoria", "Fuerza de rozamiento", "Fuerza magnética"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué tipo de movimiento describe un objeto que se mueve con velocidad constante en una dirección?",
+            "answers": ["MRU", "MRUA", "Movimiento parabólico", "Movimiento circular"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué es un vector en física?",
+            "answers": ["Una cantidad con magnitud y dirección", "Una cantidad con solo magnitud", "Una cantidad con solo dirección", "Una cantidad escalar"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "Energía y Trabajo",
+        "description": "En este módulo, exploraremos los conceptos de energía y trabajo, y cómo están relacionados con el movimiento.",
+        "content": "La energía es una propiedad fundamental de la naturaleza que se manifiesta de muchas formas diferentes. Discutiremos las diferentes formas de energía, incluida la energía cinética, que está asociada al movimiento de un objeto, y la energía potencial, que está relacionada con la posición o el estado de un objeto. También hablaremos sobre el trabajo, que se define como la transferencia de energía causada por la aplicación de una fuerza a lo largo de una distancia. Además, exploraremos el principio de conservación de la energía, que establece que la energía total de un sistema cerrado permanece constante con el tiempo, aunque puede transformarse de una forma a otra.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué forma de energía está asociada al movimiento de un objeto?",
+            "answers": ["Energía cinética", "Energía potencial", "Energía térmica", "Energía eléctrica"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cómo se define el trabajo en física?",
+            "answers": ["La fuerza aplicada sobre un objeto", "La distancia recorrida por un objeto", "La transferencia de energía causada por una fuerza", "La cantidad de movimiento de un objeto"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué establece el principio de conservación de la energía?",
+            "answers": ["La energía total de un sistema cerrado puede cambiar con el tiempo", "La energía total de un sistema cerrado se incrementa con el tiempo", "La energía total de un sistema cerrado permanece constante con el tiempo", "La energía total de un sistema cerrado disminuye con el tiempo"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "Electricidad y Magnetismo",
+        "description": "En este módulo, exploraremos los conceptos básicos de la electricidad y el magnetismo, que son fundamentales para comprender muchos fenómenos naturales y tecnológicos.",
+        "content": "La electricidad y el magnetismo son dos aspectos interrelacionados de la física que han transformado nuestra sociedad moderna. Comenzaremos explorando los conceptos básicos de la electricidad, incluidas las cargas eléctricas y la ley de Coulomb, que describe la fuerza entre ellas. Luego, nos sumergiremos en el estudio del campo eléctrico y el potencial eléctrico, así como en los circuitos eléctricos básicos, incluidos los conceptos de corriente, voltaje y resistencia. Continuaremos con el magnetismo, discutiendo la relación entre campos magnéticos y corrientes eléctricas, así como las propiedades de los imanes. Además, exploraremos fenómenos electromagnéticos como la inducción electromagnética, que es la base de tecnologías como los generadores eléctricos y los motores eléctricos.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué ley describe la fuerza entre cargas eléctricas?",
+            "answers": ["Ley de Newton", "Ley de Coulomb", "Ley de Faraday", "Ley de Ohm"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué mide la unidad de voltaje?",
+            "answers": ["Corriente", "Resistencia", "Energía", "Potencial eléctrico"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Cuál de las siguientes es una propiedad de los imanes?",
+            "answers": ["Atracción gravitatoria", "Atracción eléctrica", "Repulsión magnética", "Repulsión eléctrica"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "Óptica y Ondas",
+        "description": "En este módulo, exploraremos los fenómenos ópticos y ondulatorios, desde la reflexión y la refracción hasta el sonido y la luz.",
+        "content": "La óptica y las ondas son áreas fascinantes de la física que nos permiten comprender cómo la luz y el sonido se comportan en diferentes situaciones. Comenzaremos con la óptica, explorando conceptos como la reflexión y la refracción de la luz, que son fundamentales para entender cómo vemos el mundo que nos rodea. Luego, nos sumergiremos en el estudio de las lentes y la formación de imágenes, así como en fenómenos interesantes como la dispersión de la luz y los efectos ópticos. Continuaremos con las ondas, discutiendo la naturaleza de las ondas mecánicas y electromagnéticas, así como sus propiedades como la amplitud, la frecuencia y la longitud de onda. Además, exploraremos el sonido como una onda mecánica y cómo se propaga a través de diferentes medios.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué fenómeno óptico describe el cambio de dirección de la luz al pasar de un medio a otro?",
+            "answers": ["Reflexión", "Refracción", "Difracción", "Interferencia"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué tipo de onda es el sonido?",
+            "answers": ["Onda electromagnética", "Onda mecánica", "Onda transversal", "Onda longitudinal"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Qué propiedad de una onda está relacionada con la altura de su cresta?",
+            "answers": ["Frecuencia", "Amplitud", "Longitud de onda", "Velocidad"],
+            "correctAnswer": 1
+          }
+        ]
+      }
+      
+    ]
+  },
+  {
+    "id": 4,
+    "visible": false,
+    "title": "Curso de Ciencias para Escuela Primaria",
+    "description": "Este curso introductorio de ciencias está diseñado para estudiantes de primaria que deseen explorar conceptos básicos de ciencia de manera divertida y educativa. Desde el mundo natural hasta los fundamentos de la física y la química, este curso proporciona una introducción completa a través de actividades interactivas y experiencias prácticas.",
+    "completionPercentage": 0,
+    "isPublic": true,
+    "stages": [
+      {
+        "id": 1,
+        "title": "El Mundo Natural",
+        "description": "Descubre la diversidad del mundo natural y aprende sobre los seres vivos y su entorno.",
+        "content": "El mundo natural está lleno de fascinantes criaturas y fenómenos. En esta etapa, exploraremos la biodiversidad de la Tierra, desde los diferentes tipos de ecosistemas hasta la variedad de formas de vida que los habitan. Aprenderemos sobre la importancia de la conservación y cómo podemos cuidar nuestro entorno.\n\nAdemás, nos sumergiremos en el ciclo de vida de las plantas y los animales, explorando conceptos como la germinación, la fotosíntesis y la reproducción. Descubriremos cómo las adaptaciones permiten a los organismos sobrevivir en sus hábitats y cómo los seres humanos impactan en los ecosistemas.\n\nAl final de esta etapa, tendrás una comprensión sólida del mundo natural que te rodea.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Qué es la biodiversidad?",
+            "answers": ["La variedad de vida en la Tierra", "El estudio de los seres vivos", "Un tipo de ecosistema", "La cantidad de plantas en un área específica"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué proceso permite a las plantas producir su propio alimento?",
+            "answers": ["Germinación", "Fotosíntesis", "Reproducción", "Evolución"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué son las adaptaciones en los seres vivos?",
+            "answers": ["Cambios físicos que ocurren durante la vida", "Características heredadas que ayudan a la supervivencia", "Transformaciones químicas en el cuerpo", "Variaciones estacionales en el comportamiento"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Por qué es importante la conservación del medio ambiente?",
+            "answers": ["Para proteger la diversidad de la vida", "Para controlar el clima", "Para aumentar la urbanización", "Para reducir la biodiversidad"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es un ejemplo de un ecosistema acuático?",
+            "answers": ["Bosque tropical", "Desierto", "Océano", "Pradera"],
+            "correctAnswer": 2
+          }
+        ]
+      },
+      {
+        "id": 2,
+        "title": "Los Fundamentos de la Física",
+        "description": "Explora los principios básicos de la física y descubre cómo se aplican en la vida cotidiana.",
+        "content": "La física es la ciencia que estudia las propiedades y el comportamiento de la materia y la energía. En esta etapa, nos sumergiremos en los conceptos fundamentales de la física y su aplicación en nuestro entorno.\n\nComenzaremos explorando el movimiento y la fuerza, aprendiendo sobre la gravedad, la fricción y las leyes del movimiento de Newton. Descubriremos cómo se relacionan la masa y la velocidad en el movimiento de los objetos y cómo estas leyes se aplican en nuestra vida diaria, desde el lanzamiento de un balón hasta el movimiento de los planetas en el espacio.\n\nAdemás, exploraremos los conceptos de energía y trabajo, comprendiendo cómo se transfieren y se transforman en diferentes formas. Desde la energía cinética hasta la energía potencial, entenderemos cómo se relacionan estos conceptos con la actividad humana y el funcionamiento de las máquinas simples.\n\nAl final de esta etapa, tendrás una comprensión sólida de los principios básicos de la física y su aplicación en el mundo que te rodea.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál de las siguientes es una ley del movimiento de Newton?",
+            "answers": ["Un objeto en reposo permanece en reposo a menos que actúe sobre él una fuerza externa", "La velocidad de un objeto es constante a menos que actúe sobre él una fuerza neta", "Por cada acción hay una reacción igual y opuesta", "La fuerza neta que actúa sobre un objeto es igual a la masa del objeto por su aceleración"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué tipo de energía posee un objeto en movimiento?",
+            "answers": ["Energía térmica", "Energía eléctrica", "Energía cinética", "Energía potencial"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué es el trabajo en términos de física?",
+            "answers": ["Cualquier esfuerzo físico realizado por una persona", "La cantidad de energía necesaria para realizar una tarea", "La fuerza aplicada a un objeto para moverlo a una distancia", "La cantidad de movimiento de un objeto"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué causa la fricción entre dos superficies?",
+            "answers": ["La gravedad", "La magnetización", "El contacto físico", "La transferencia de energía"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cuál es una forma de energía potencial?",
+            "answers": ["Energía térmica", "Energía cinética", "Energía eléctrica", "Energía gravitacional"],
+            "correctAnswer": 3
+          }
+        ]
+      },
+      {
+        "id": 3,
+        "title": "La Química en Nuestra Vida",
+        "description": "Descubre cómo la química está presente en nuestro día a día y cómo afecta nuestras vidas.",
+        "content": "La química es la ciencia que estudia la composición, estructura y propiedades de la materia, así como los cambios que experimenta durante las reacciones químicas. En esta etapa, exploraremos la importancia de la química en nuestra vida cotidiana y cómo influye en diversos aspectos, desde la alimentación hasta la medicina.\n\nComenzaremos aprendiendo sobre los elementos y los compuestos, entendiendo la diferencia entre átomos y moléculas y cómo se combinan para formar diferentes sustancias. Exploraremos los conceptos de la tabla periódica y cómo los elementos se clasifican según sus propiedades.\n\nAdemás, nos sumergiremos en el mundo de las reacciones químicas, comprendiendo cómo se producen los cambios químicos y qué factores los afectan. Desde la oxidación hasta la fermentación, exploraremos ejemplos de reacciones químicas en la naturaleza y en la industria.\n\nAl final de esta etapa, tendrás una comprensión sólida de cómo la química influye en nuestra vida diaria y cómo puedes aplicar estos conocimientos en tu propio entorno.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál es la unidad básica de un elemento químico?",
+            "answers": ["Molécula", "Átomo", "Compuesto", "Ion"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué tipo de sustancia se forma cuando dos o más elementos se combinan en proporciones fijas?",
+            "answers": ["Elemento", "Compuesto", "Molécula", "Átomo"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué es una reacción química?",
+            "answers": ["Un cambio físico reversible", "Una transformación de energía", "Un cambio químico irreversible", "Una interacción gravitacional"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué tipo de reacción química implica la combinación de oxígeno con otra sustancia?",
+            "answers": ["Reducción", "Oxidación", "Fermentación", "Descomposición"],
+            "correctAnswer": 1
+          },
+          {
+            "question": "¿Qué elemento químico es el componente principal del agua?",
+            "answers": ["Hidrógeno", "Oxígeno", "Carbono", "Nitrógeno"],
+            "correctAnswer": 1
+          }
+        ]
+      },
+      {
+        "id": 4,
+        "title": "El Universo y Más Allá",
+        "description": "Explora los misterios del universo, desde los planetas y las estrellas hasta los fenómenos cósmicos.",
+        "content": "El universo es vasto y lleno de maravillas que desafían nuestra comprensión. En esta etapa, nos aventuraremos en el cosmos para explorar los planetas, las estrellas y los fenómenos celestes que llenan el cielo nocturno.\n\nComenzaremos aprendiendo sobre nuestro propio sistema solar, desde el ardiente sol hasta los distantes planetas y lunas que lo orbitan. Descubriremos cómo se formaron los planetas y cómo la gravedad gobierna su movimiento.\n\nAdemás, exploraremos las estrellas y las galaxias, comprendiendo cómo nacen, viven y mueren las estrellas y cómo se forman las vastas estructuras que pueblan el universo. Aprenderemos sobre los agujeros negros, las nebulosas y otros objetos celestes fascinantes.\n\nAl final de esta etapa, tendrás una comprensión sólida del cosmos y de nuestra posición en él, así como de los misterios que todavía esperan ser descubiertos.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál es la estrella más cercana a la Tierra?",
+            "answers": ["Vega", "Sirio", "El Sol", "Alfa Centauri"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cuál es la galaxia en la que se encuentra nuestro sistema solar?",
+            "answers": ["Vía Láctea", "Andrómeda", "Centauro A", "Sombrero"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué es un agujero negro?",
+            "answers": ["Una estrella joven en formación", "Un remanente estelar después de una explosión", "Una región del espacio con una gravedad extrema", "Una galaxia enana"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Cuál es el nombre de la misión espacial que llevó al primer hombre a la luna?",
+            "answers": ["Apolo 11", "Mercurio 7", "Géminis 4", "Vostok 1"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Cuál es el nombre del cuerpo celeste que orbita la Tierra?",
+            "answers": ["Luna", "Planeta", "Cometa", "Asteroide"],
+            "correctAnswer": 0
+          }
+        ]
+      },
+      {
+        "id": 5,
+        "title": "El Método Científico",
+        "description": "Aprende cómo los científicos investigan y descubren nuevos conocimientos a través del método científico.",
+        "content": "El método científico es una herramienta fundamental en la investigación y el descubrimiento de nuevos conocimientos. En esta etapa, exploraremos los pasos del método científico y cómo se aplican en la práctica.\n\nComenzaremos aprendiendo sobre la observación y la formulación de preguntas, entendiendo cómo los científicos identifican problemas y plantean hipótesis para resolverlos. Descubriremos la importancia de diseñar experimentos controlados para probar nuestras hipótesis y recopilar datos.\n\nAdemás, exploraremos cómo se analizan los datos y se llega a conclusiones basadas en la evidencia recopilada. Aprenderemos sobre la importancia de la revisión por pares y la comunicación de resultados en la comunidad científica.\n\nAl final de esta etapa, comprenderás cómo los científicos investigan y descubren nuevos conocimientos y cómo puedes aplicar el método científico en tu propia vida para resolver problemas y hacer descubrimientos.",
+        "completed": false,
+        "testScore": 0,
+        "questions": [
+          {
+            "question": "¿Cuál es el primer paso del método científico?",
+            "answers": ["Formular una hipótesis", "Diseñar un experimento", "Observar y hacer preguntas", "Analizar los datos"],
+            "correctAnswer": 2
+          },
+          {
+            "question": "¿Qué papel juegan los experimentos en el método científico?",
+            "answers": ["Probar la hipótesis", "Recopilar datos", "Formular preguntas", "Comunicar resultados"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Por qué es importante la revisión por pares en la investigación científica?",
+            "answers": ["Para verificar la validez de los resultados", "Para publicar en revistas científicas", "Para obtener financiamiento", "Para competir con otros científicos"],
+            "correctAnswer": 0
+          },
+          {
+            "question": "¿Qué paso del método científico implica sacar conclusiones basadas en los datos recopilados?",
+            "answers": ["Formular una hipótesis", "Diseñar un experimento", "Observar y hacer preguntas", "Analizar los datos"],
+            "correctAnswer": 3
+          },
+          {
+            "question": "¿Qué se hace después de comunicar los resultados en el método científico?",
+            "answers": ["Diseñar un experimento nuevo", "Realizar más observaciones", "Revisar por pares", "Formular nuevas preguntas"],
+            "correctAnswer": 3
+          }
+        ]
+      }
+    ]
+  }
+]

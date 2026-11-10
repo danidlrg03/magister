@@ -1,0 +1,74 @@
+/* Test.css */
+.form-test-container {
+    margin: 20px auto;
+    width: 80%;
+    max-width: 800px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+  }
+
+  .header-course button:hover {
+    background-color: #002C5C;
+  }
+  
+  label {
+    display: block;
+    margin-bottom: 10px;
+  }
+  
+  .radio-custom {
+    display: none; /* Hide the default radio button */
+  }
+  
+  .radio-custom:checked + .radio-label::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #004FA3;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .radio-label {
+    display: inline-block;
+    vertical-align: middle;
+    cursor: pointer;
+    margin-left: 10px;
+  }
+  
+  .radio-label::before {
+    content: '';
+    display: inline-block;
+    width: 12px;
+    height: 12px;
+    background-color: #fff;
+    border: 1px solid #ccc;
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .form-test-container button {
+    display: block;
+    width: 100%;
+    max-width: 20%;
+    margin: 20px auto;
+    padding: 10px;
+    background-color: #004FA3;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+
+    
+  .form-test-container .header-course button {
+    margin-left: 0px;
+  }
+  
+  .form-test-container button:hover {
+    background-color: #002C5C;
+  }
+  

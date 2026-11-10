@@ -1,0 +1,101 @@
+.course-list-page {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+    max-width: 80%;
+    margin: 0 auto; /* Center the items horizontally */
+}
+
+.course-container {
+    max-width: 450px;
+    min-width: 300px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: left; /* Align text to the left */
+    margin: 5% auto;
+    height: fit-content;
+  }
+  
+  .course-list-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .course-container button {
+    padding: 10px 20px;
+    width: 100%;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin: 0 auto; /* Center the buttons horizontally */
+    display: block; /* Ensure each button occupies a full line */
+  }
+  
+  .course-container button:hover {
+    background-color: #002C5C;
+  }
+  
+  a {
+    text-decoration: none;
+  }
+  
+  .course-list-header {
+    display: flex;
+    justify-content: space-between;
+    padding: 0 20px;
+  }
+  
+  .course-list-header .plus-icon {
+    padding: 10px 15px;
+    color: #004FA3;
+    border: none;
+    border-color: #004FA3;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .course-list-header .plus-icon:hover {
+    color: #002C5C;
+  }
+  
+  .course-item .course-title {
+    width: 80%;
+    color: #005dc0;
+    font-weight: bold;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+    margin: 0 auto; /* Center the buttons horizontally */
+    display: block; /* Ensure each button occupies a full line */
+  }
+  
+  .course-item {
+    margin-bottom: 20px; /* Add some margin between each course item */
+    text-align: justify;
+  }
+  
+  .course-item-footer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  
+  .course-item-footer a {
+    width: 30%;
+  }
+  
+  .course-item-footer button {
+    padding: 10px 20px;
+    width: 100%;
+    text-align: center;
+    background-color: #004FA3;
+    color: #fff;
+    cursor: pointer;
+  }
+  
