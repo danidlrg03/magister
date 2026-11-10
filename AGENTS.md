@@ -1,5 +1,8 @@
 # Instructions for agents
 
+## Error handling
+- To run the command "rg" do it outside of the sandbox. 
+
 ## Scope control
 
 - Perform only the requested work and the changes strictly necessary to accomplish it.
